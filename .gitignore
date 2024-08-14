@@ -1,0 +1,7 @@
+terraform.tfvars
+.terraform/
+.tool-versions
+payload/*.zip
+doc/
+data/
+.DS_Store
