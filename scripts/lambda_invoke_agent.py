@@ -5,6 +5,7 @@ import json
 def lambda_handler(event, context):
   input_text=event['input_text']
 
+# Agentの定義
   agent_id='RWCQHBNOAA'
   agent_alias_id='CAOT61SJSH'
   session_id = str(uuid.uuid1())

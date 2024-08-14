@@ -3,6 +3,7 @@ import uuid
 
 input_text="Vtuberにおけるソーシャルネットワークに関する分析の論文について、概要を教えてください"
 
+# Agentの定義
 agent_id='RWCQHBNOAA'
 agent_alias_id='CAOT61SJSH'
 session_id = str(uuid.uuid1())
