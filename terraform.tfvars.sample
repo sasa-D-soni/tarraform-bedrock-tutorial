@@ -1,0 +1,3 @@
+# 指定されたユーザーのキーを設定する
+aws_access_key = "HOGEHOGE"
+aws_secret_key = "XXX"
