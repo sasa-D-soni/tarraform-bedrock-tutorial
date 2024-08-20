@@ -21,7 +21,6 @@ response = client.invoke_agent(
 print(f"response: {response}")
 event_stream = response['completion']
 for event in event_stream:
-    # print(event)
     if 'chunk' in event:
         data = event['chunk']['bytes'].decode("utf-8")
         print(data)

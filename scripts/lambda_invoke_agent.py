@@ -24,7 +24,6 @@ def lambda_handler(event, context):
   event_stream = response['completion']
   message = ''
   for event in event_stream:
-      # print(event)
       if 'chunk' in event:
           data = event['chunk']['bytes'].decode("utf-8")
           print(data)

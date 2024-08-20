@@ -1,5 +1,6 @@
 import uuid
 import boto3
+import streamlit as st
 
 # Agentの定義
 agent_id='RWCQHBNOAA'
@@ -8,9 +9,6 @@ session_id = str(uuid.uuid1())
 
 # Clientの定義
 client = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
-
-# Streamlitでガワを被せる
-import streamlit as st
 
 st.title("Bedrock AgentからのKnowledge base呼出し")
 input_text = st.text_input("このテキストをAgentに送信します")
