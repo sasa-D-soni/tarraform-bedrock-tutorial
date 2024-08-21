@@ -37,6 +37,8 @@ provider "opensearch" {
   url         = aws_opensearchserverless_collection.rag.collection_endpoint
   aws_region  = local.region_default
   healthcheck = false
+  aws_access_key = var.aws_access_key
+  aws_secret_key = var.aws_secret_key
 }
 
 provider "opensearch" {
@@ -44,4 +46,6 @@ provider "opensearch" {
   url         = aws_opensearchserverless_collection.rag.collection_endpoint
   aws_region  = local.region_tokyo
   healthcheck = false
+  aws_access_key = var.aws_access_key
+  aws_secret_key = var.aws_secret_key
 }
