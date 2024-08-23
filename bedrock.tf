@@ -91,10 +91,7 @@ resource "aws_bedrockagent_knowledge_base" "rag" {
       }
     }
   }
-  depends_on = [
-    opensearch_index.rag,
-    time_sleep.opensearch_index_delay
-  ]
+  depends_on = [time_sleep.opensearch_index_delay]
 }
 
 #
@@ -230,6 +227,12 @@ resource "aws_opensearchserverless_collection" "rag" {
   ]
 }
 
+# collection作成直後にインデックスを作成しようとすると403エラーが起こるため遅延を入れる
+resource "time_sleep" "opensearchserverless_collection_delay" {
+  create_duration = "30s"
+  depends_on      = [aws_opensearchserverless_collection.rag]
+}
+
 # インデックス
 # https://registry.terraform.io/providers/opensearch-project/opensearch/latest/docs/resources/index
 resource "opensearch_index" "rag" {
@@ -265,7 +268,7 @@ resource "opensearch_index" "rag" {
   })
   force_destroy = true
 
-  depends_on = [aws_opensearchserverless_collection.rag]
+  depends_on = [time_sleep.opensearchserverless_collection_delay]
   lifecycle {
     ignore_changes = [
       mappings
