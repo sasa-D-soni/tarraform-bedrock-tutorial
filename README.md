@@ -3,17 +3,21 @@
 流れ
 1. `$ mv terraform.tfvars.sample terraform.tfvars`
 2. `$ vi terraform.tfvars` AWSのキー情報を設定
-3. `$ terraform apply`
-4. S3にデータをアップロード
-5. ナレッジベースのデータソースからS3バケットを同期
-6. ナレッジベース上でテスト
-7. エージェントで「準備」を押してステータスをPREPAREDにする
-8. エージェント上でテスト
-9. エイリアス作成
-10. 完成！
-11. エイリアス削除
-12. S3空にする
-13. `$ terraform destory`
+3. `$ vi variables.tf`  
+   - `service_account_id` にAWSのアカウントidを設定
+   - `service_name` に適当な名前を設定
+4. `$ terraform init`
+5. `$ terraform apply`
+6. S3にデータをアップロード
+7. ナレッジベースのデータソースからS3バケットを同期
+8. ナレッジベース上でテスト
+9. エージェントで「準備」を押してステータスをPREPAREDにする
+10. エージェント上でテスト
+11. エイリアス作成
+12. 完成！
+13. エイリアス削除
+14. S3空にする
+15. `$ terraform destory`
 
 ## エージェント向けの指示(instruction) 例文
 
