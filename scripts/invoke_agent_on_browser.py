@@ -3,8 +3,8 @@ import boto3
 import streamlit as st
 
 # Agentの定義
-agent_id='RWCQHBNOAA'
-agent_alias_id='CAOT61SJSH'
+agent_id='XXX'
+agent_alias_id='XXX'
 session_id = str(uuid.uuid1())
 
 # Clientの定義

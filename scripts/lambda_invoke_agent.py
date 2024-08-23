@@ -6,8 +6,8 @@ def lambda_handler(event, context):
   input_text=event['input_text']
 
 # Agentの定義
-  agent_id='RWCQHBNOAA'
-  agent_alias_id='CAOT61SJSH'
+  agent_id='XXX'
+  agent_alias_id='XXX'
   session_id = str(uuid.uuid1())
 
   client = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
