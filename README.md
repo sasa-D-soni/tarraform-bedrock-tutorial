@@ -1,17 +1,19 @@
 # Terraform for Amazon Bedrock RAG
 
 流れ
-1. tf apply
-2. S3にデータをアップロード
-3. ナレッジベースのデータソースからS3バケットを同期
-4. ナレッジベース上でテスト
-5. エージェントで「準備」を押してステータスをPREPAREDにする
-6. エージェント上でテスト
-7. エイリアス作成
-8. 完成！
-9. エイリアス削除
-10. S3空にする
-11. tf destory
+1. `$ mv terraform.tfvars.sample terraform.tfvars`
+2. `$ vi terraform.tfvars` AWSのキー情報を設定
+3. `$ terraform apply`
+4. S3にデータをアップロード
+5. ナレッジベースのデータソースからS3バケットを同期
+6. ナレッジベース上でテスト
+7. エージェントで「準備」を押してステータスをPREPAREDにする
+8. エージェント上でテスト
+9. エイリアス作成
+10. 完成！
+11. エイリアス削除
+12. S3空にする
+13. `$ terraform destory`
 
 ## エージェント向けの指示(instruction) 例文
 
