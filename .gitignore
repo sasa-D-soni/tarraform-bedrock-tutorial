@@ -5,3 +5,5 @@ payload/*.zip
 doc/
 data/
 .DS_Store
+terraform.tfstate
+terraform.tfstate.backup
